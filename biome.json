@@ -1,0 +1,19 @@
+{
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "style": {
+        "noEnum": "error"
+      },
+      "recommended": true
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "files": {
+    "experimentalScannerIgnores": ["*.gen.ts", ".svg"]
+  }
+}
