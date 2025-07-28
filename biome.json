@@ -2,6 +2,9 @@
   "linter": {
     "enabled": true,
     "rules": {
+      "suspicious": {
+        "noEmptyBlock": "error"
+      },
       "style": {
         "noEnum": "error"
       },
@@ -15,5 +18,15 @@
   },
   "files": {
     "experimentalScannerIgnores": ["*.gen.ts", ".svg"]
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "useSortedProperties": {
+          "level": "on",
+          "options": {}
+        }
+      }
+    }
   }
 }

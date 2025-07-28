@@ -2,10 +2,11 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
+import ThemeProvider from "./theme/ThemeProvider.tsx";
 
 // 1. Определите тип контекста
 export type RouterContext = {
-  auth: {
+  auth?: {
     isAuthenticated: boolean;
   };
 };
@@ -22,7 +23,9 @@ const router = createRouter({
 
 const App = () => {
   const isAuthenticated = false;
-  return <RouterProvider router={router} context={{ auth: isAuthenticated }} />;
+  return (
+    <RouterProvider router={router} context={{ auth: { isAuthenticated } }} />
+  );
 };
 
 const rootEl = document.getElementById("root");
@@ -30,7 +33,9 @@ if (rootEl) {
   const root = ReactDOM.createRoot(rootEl);
   root.render(
     <React.StrictMode>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </React.StrictMode>,
   );
 }
