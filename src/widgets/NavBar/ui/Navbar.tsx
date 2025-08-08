@@ -19,10 +19,28 @@ export const Navbar = ({ auth }: RouterContext) => {
 
   return (
     <nav className={styles.navbar}>
-      <Link to="/">Main</Link>
-      {!auth?.isAuthenticated && <Link to="/about">About</Link>}
+      <Link
+        to="/"
+        className={styles.main_link}
+        activeProps={{ className: styles.active_link }}
+      >
+        Main
+      </Link>
+      {!auth?.isAuthenticated && (
+        <Link
+          to="/about"
+          className={styles.about_link}
+          activeProps={{ className: styles.active_link }}
+        >
+          About
+        </Link>
+      )}
       {!auth?.isAuthenticated && <Link to="/">Login</Link>}
-      <button type={"button"} onClick={handleTheme}>
+      <button
+        type={"button"}
+        onClick={handleTheme}
+        className={styles.theme_toggle}
+      >
         theme
       </button>
     </nav>
