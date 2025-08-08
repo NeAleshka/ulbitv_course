@@ -1,8 +1,9 @@
-import { createRouter, RouterProvider } from "@tanstack/react-router";
+import { createRouter } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { App } from "./app/App.tsx";
+import ThemeProvider from "./app/theme/ThemeProvider.tsx";
 import { routeTree } from "./routeTree.gen";
-import ThemeProvider from "./theme/ThemeProvider.tsx";
 
 // 1. Определите тип контекста
 export type RouterContext = {
@@ -17,16 +18,9 @@ declare module "@tanstack/react-router" {
   }
 }
 
-const router = createRouter({
+export const router = createRouter({
   routeTree,
 });
-
-const App = () => {
-  const isAuthenticated = false;
-  return (
-    <RouterProvider router={router} context={{ auth: { isAuthenticated } }} />
-  );
-};
 
 const rootEl = document.getElementById("root");
 if (rootEl) {
