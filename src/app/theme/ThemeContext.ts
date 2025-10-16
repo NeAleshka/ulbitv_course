@@ -7,11 +7,11 @@ export const Themes = {
 
 export type ThemesType = (typeof Themes)[keyof typeof Themes];
 
-type ContextType = {
+export type ThemeContextType = {
   theme?: ThemesType;
   setTheme?: (newTheme: ThemesType) => void;
 };
 
-export const ThemeContext = createContext<ContextType>({});
+export const ThemeContext = createContext<ThemeContextType>({});
 
 export const LOCAL_STORAGE_KEY_THEME = "theme";

@@ -1,8 +1,8 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import ThemeProvider from "./app/theme/ThemeProvider";
 import { routeTree } from "./routeTree.gen";
-import ThemeProvider from "./theme/ThemeProvider.tsx";
 
 // 1. Определите тип контекста
 export type RouterContext = {
