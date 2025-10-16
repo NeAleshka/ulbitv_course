@@ -20,7 +20,7 @@ declare module "@tanstack/react-router" {
 const router = createRouter({
   routeTree,
 });
-//test zed
+//test zed 2
 const App = () => {
   const isAuthenticated = false;
   return (
